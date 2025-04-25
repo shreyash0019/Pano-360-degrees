@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MTSS Interactive Panorama</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .hero {
+      height: 100vh;
+      width: 100vw;
+      background-image: url('/front.png'); /* Default front view */
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.3s ease; /* Smooth transition on change */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero" id="panorama"></div>
+
+  <script>
+    const panorama = document.getElementById('panorama');
+    let currentView = '/front.png'; // Keeps track of the current image
+
+    // Function to update the background image only if it's different
+    function updateView(imagePath) {
+      if (currentView !== imagePath) {
+        currentView = imagePath;
+        panorama.style.backgroundImage = `url(${imagePath})`;
+      }
+    }
+
+    // Change view based on mouse position
+    panorama.addEventListener('mousemove', (e) => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      const x = e.clientX;
+      const y = e.clientY;
+
+      if (x < width / 3) {
+        updateView('/left.png');      // Looking left
+      } else if (x > (2 * width) / 3) {
+        updateView('/right.png');     // Looking right
+      } else if (y < height / 3) {
+        updateView('/up.png');        // Looking up
+      } else if (y > (2 * height) / 3) {
+        updateView('/back.png');      // Looking back (down area)
+      } else {
+        updateView('/front.png');     // Looking straight (center area)
+      }
+    });
+
+    // Reset to front view when mouse leaves the area
+    panorama.addEventListener('mouseout', () => {
+      updateView('/front.png');
+    });
+  </script>
+
+</body>
+</html>
