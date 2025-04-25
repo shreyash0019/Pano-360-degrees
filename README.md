@@ -64,6 +64,8 @@ cd Pano-360-degrees
 
 
 
+
+
 Customization
 
 Use your own images (left.png, right.png, etc.) with the same file names.
