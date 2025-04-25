@@ -2,10 +2,6 @@ Pano 360° Interactive Viewer
 
 A simple and lightweight interactive panorama viewer built with plain HTML, CSS, and JavaScript. Move your mouse around the screen to explore different views — front, left, right, up, and back — giving a basic 360° experience using static images.
 
-Demo
-
-![Demo GIF or Screenshot Placeholder]
-
 > Try it live by opening index.html in your browser.
 
 
