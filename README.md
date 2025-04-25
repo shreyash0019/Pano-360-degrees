@@ -81,11 +81,6 @@ Add animation between transitions
 Add indicator or navigation arrows
 
 
-License
-
-This project is open-source and available under the MIT License.
-
-
 ---
 
 Feel free to contribute or fork the project!
