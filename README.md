@@ -52,9 +52,10 @@ Usage
 
 1. Clone the repo:
 
+
+
 git clone https://github.com/shreyash0019/Pano-360-degrees.git
 cd Pano-360-degrees
-
 
 2. Open index.html in any modern browser.
 
@@ -79,6 +80,7 @@ Use real 360° panoramic images
 Add animation between transitions
 
 Add indicator or navigation arrows
+
 
 
 ---
